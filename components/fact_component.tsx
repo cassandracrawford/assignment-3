@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View} from 'react-native';
+import { Platform, StyleSheet, Text, View} from 'react-native';
 
 export default function FactDisplay() {
     return(
@@ -15,12 +15,15 @@ const styles = StyleSheet.create({
   borderBox: {
     position: 'absolute',
     top: 10,
-    right: 40,
     width: 300,
     minHeight: 100,
     backgroundColor: '#8B5E3C',
     borderRadius: 10,
-    zIndex: 0
+    zIndex: 0,
+    ...Platform.select({
+      ios: {right: 40},
+      android: {left: 40},
+    })
   },
   factContainer: {
     width: 300,

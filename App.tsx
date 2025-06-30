@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { Platform, SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import AddDate from './components/date_component';
 import FactDisplay from './components/fact_component';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar hidden={true} />
+      <StatusBar style='auto' />
       <ScrollView style={{backgroundColor: '#FACA78'}}
         contentContainerStyle={{padding: 20}}>
         {/* App Heading */}
@@ -30,5 +30,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FACA78',
+    paddingTop: Platform.OS === 'android' ? 40 : 0,
   },
 });
