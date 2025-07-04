@@ -1,4 +1,5 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { useState } from 'react';
 
 type AddDateProps = {
   label: string;
@@ -7,6 +8,8 @@ type AddDateProps = {
 };
 
 export default function AddDate({ label, placeholder, onChange }: AddDateProps) {
+  const [inputValue, setInputValue] = useState('');
+
   return (
     <View style={{flex: 1, marginBottom: 8}}>
       <Text style={styles.label}>{label}</Text>
@@ -15,7 +18,11 @@ export default function AddDate({ label, placeholder, onChange }: AddDateProps) 
         placeholder={placeholder}
         keyboardType="numeric"
         maxLength={2}
-        onChangeText={onChange} 
+        value={inputValue}
+        onChangeText={(text) => {
+          setInputValue(text);
+          onChange(text);
+        }}
       />
     </View>
   );
