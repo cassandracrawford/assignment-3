@@ -3,9 +3,10 @@ import { View, Text, TextInput, StyleSheet } from 'react-native';
 type AddDateProps = {
   label: string;
   placeholder: string;
+  onChange: (value: string) => void;
 };
 
-export default function AddDate({ label, placeholder }: AddDateProps) {
+export default function AddDate({ label, placeholder, onChange }: AddDateProps) {
   return (
     <View style={{flex: 1, marginBottom: 8}}>
       <Text style={styles.label}>{label}</Text>
@@ -14,6 +15,7 @@ export default function AddDate({ label, placeholder }: AddDateProps) {
         placeholder={placeholder}
         keyboardType="numeric"
         maxLength={2}
+        onChangeText={onChange} 
       />
     </View>
   );
