@@ -31,9 +31,10 @@ export default function AddDate({ label, placeholder, onChange }: AddDateProps) 
 const styles = StyleSheet.create({
   input: {
     backgroundColor: '#DD5341',
-    padding: 6,
-    fontSize: 18,
+    padding: 10,
+    fontSize: 16,
     color: '#FFF',
+    borderRadius: 4,
     borderWidth: 2,
     borderColor: '#603B2E',
   },
