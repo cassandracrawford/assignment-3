@@ -19,6 +19,7 @@ export default function AddDate({ label, placeholder, onChange }: AddDateProps) 
         keyboardType="numeric"
         maxLength={2}
         value={inputValue}
+        placeholderTextColor="#FFFFFF"
         onChangeText={(text) => {
           setInputValue(text);
           onChange(text);
